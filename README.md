@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nutdown Editor
 
-## Getting Started
+Nutdown Editor is a lightweight, real-time Markdown editor built with Next.js. Write Markdown on one side and see it rendered live on the other, complete with GitHub-flavored Markdown support (tables, task lists, strikethrough, etc.) and syntax-highlighted code blocks.
 
-First, run the development server:
+## Features
+
+- **Live preview** — edits render instantly as you type
+- **GitHub-flavored Markdown** via `remark-gfm`
+- **Syntax highlighting** for fenced code blocks via `rehype-highlight`
+- Built on Next.js 16, React 19, and Tailwind CSS 4
+
+## How To Run
+
+This project can be run with either [Bun](https://bun.sh) or Node.js.
+
+### Using Bun (recommended)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Using Node.js
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies with your preferred package manager, then start the dev server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+# or
+yarn install
+yarn dev
+# or
+pnpm install
+pnpm dev
+```
+
+Once running, open [http://localhost:3000](http://localhost:3000) in your browser to use the editor.
+
+## Project Structure
+
+- `src/app/page.tsx` — main page
+- `src/app/components/MdEditor.tsx` — the Markdown input editor
+- `src/app/components/MdPreview.tsx` — the rendered Markdown preview
+- `src/app/context/MarkdownContext.tsx` — shared state between editor and preview
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses [Next.js](https://nextjs.org). To learn more, check out the [Next.js Documentation](https://nextjs.org/docs).
